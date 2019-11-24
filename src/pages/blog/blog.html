@@ -1,0 +1,97 @@
+
+<ion-header >
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon style="color:white" name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+    <ion-buttons right>
+         
+    
+      <button ion-button icon-only  (click)="onClickSearchButton()">
+          <ion-icon class="pdr-5"style="color:white" name="md-search"></ion-icon>
+      </button>
+      <button ion-button icon-only  (click)="onNotificationButton()">
+          <ion-icon class="pdr-5"style="color:white" name="notifications"></ion-icon>
+      </button>
+      <button *ngIf="cs.threedots" ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+
+    </ion-buttons>
+
+    <ion-searchbar *ngIf="searchShow" [(ngModel)]="query" [showCancelButton]="shouldShowCancel" (ionInput)="onInput()" class=""></ion-searchbar>
+
+  </ion-navbar>
+  <ion-segment [(ngModel)]="home_tabs"  style="width:100%" class="segment-btn-group text-white pdt-5 pdb-5 stroke-2 stroke-white bdra-5">
+      <ion-segment-button class="messenger" value="offers">
+       Offers
+      </ion-segment-button>
+      <ion-segment-button class="messenger" (click)="goto()"value="deals">
+        Loot Deals
+      </ion-segment-button>
+      <ion-segment-button class="messenger" (click)="gotoTelegram()"value="telegram">
+       Telegram Updates
+      </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+ 
+
+
+<ion-content  class="offerback">
+
+  
+  <!-- <ion-card style="height:30%;" class="bdra-10"> -->
+      <div *ngIf="slideData.length!=0"class="wrapper-slide">
+      <ion-slides autoplay="2500" loop="true" speed="500" pager="true" class="height-auto" #slide1>
+        <ion-slide  style="object-fit:contain"  *ngFor="let item of slideData">
+         <img (click)="handleSlideClick(item)"class="slideImage"src="{{item.imgUrl}}" alt="">
+        
+        </ion-slide>
+      </ion-slides>
+
+    </div>  
+  <!-- </ion-card> -->
+  
+  <ion-spinner class="indicator" [ngClass]="spnState"></ion-spinner>
+
+  <ion-card *ngFor="let item of data" class=" ani-bottom-to-top shadow-2 bdra-10 card card-md">
+      <img class="thmb"*ngIf="item.thumb!=null" [src]="item.thumb!=null?item.thumb:modal" (click)="wpService.doReadMore(navCtrl,item)">
+      <ion-card-content class="card-content card-content-md" (click)="wpService.doReadMore(navCtrl,item)">
+        <ion-card-title class="fs-16 fw-600 card-title card-title-md" [innerHTML]="item.title"></ion-card-title>
+        <!-- <p class="fs-13" [innerHTML]="item.excerpt"></p> -->
+      </ion-card-content>
+  
+      <ion-row class="row">
+        <ion-col>
+          <button (click)="wpService.doFavorite(item)" ion-button icon-left clear small class="text-black favorite">
+            <ion-icon style="color:red" [name]="item.isFavorite == true ? 'heart' : 'heart-outline'"></ion-icon>
+          </button>
+        </ion-col>
+  
+        <ion-col center text-center>
+           <button (click)="wpService.doShare(item)" ion-button icon-left clear small class="text-black">
+               <ion-icon style="color:#d0eeaa" name="md-share"></ion-icon>
+          </button>
+        </ion-col>
+  
+        <ion-col right text-right>
+          <button (click)="wpService.doOpen(item)" ion-button icon-left clear small class="text-black">
+            <ion-icon name="md-open"></ion-icon>
+          </button>
+        </ion-col>
+        
+        <ion-col right text-right>
+          <button (click)="wpService.doReadMore(navCtrl,item)" ion-button icon-left clear small class="text-black">
+            <ion-icon name="ios-more"></ion-icon>
+          </button>
+        </ion-col>
+  
+      </ion-row>
+    </ion-card>
+     <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+       <ion-infinite-scroll-content></ion-infinite-scroll-content>
+     </ion-infinite-scroll>
+  </ion-content>
+  

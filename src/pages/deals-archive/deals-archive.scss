@@ -1,0 +1,19 @@
+page-deals-archive {
+    
+    
+   
+   h5 {
+    display: block;
+    height: 30px;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+      }
+      .toolbar[primary] .toolbar-title, .toolbar[primary] .bar-button-default {
+        color: white;
+      }
+      .thmb{
+        height: 139px;
+        object-fit: cover;
+      }
+}

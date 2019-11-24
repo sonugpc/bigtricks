@@ -1,0 +1,40 @@
+<ion-header class="skin-transparent transparent">
+  <ion-toolbar class="skin-transparent">
+    <ion-title>Add Comment </ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only class="circle text-grey-5 button-circle mgr-10 mgl-10" (click)="dismiss()">
+        <ion-icon name="ios-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="warmflame">
+       
+  <div padding class=" pdt-50 pdb-50 main-form">
+    <h4 class="fs-18 fw-600 text-white-2 text-center">Add Comment</h4>
+    <p class="mgb-50 text-white-2 text-center fs-13">Please Share Your query or Thoughts on this Post.</p>
+    <ion-list>
+        <ion-item class="text-white-2 white-opct">
+            <ion-input type="text" [(ngModel)]="name" placeholder="Name"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-item class="text-white-2 white-opct">
+            <ion-input type="email" [(ngModel)]="email" placeholder="Email"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-item class="text-white-2 white-opct">
+            <ion-textarea type="text" [(ngModel)]="content" placeholder="Comment"></ion-textarea>
+        </ion-item>
+    </ion-list>
+    <div class="text-center">
+      
+      <button (click)="submitcomment()"ion-button round color="light" block class="white-opct text-white shadow-1 mgt-15">                Submit
+</button>
+
+    
+  </div>
+</div>
+</ion-content>

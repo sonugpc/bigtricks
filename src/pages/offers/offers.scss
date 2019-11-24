@@ -1,0 +1,31 @@
+page-offers {
+.ribon{
+    position: relative;
+    width: 40%;
+    height: 7%;
+    margin-left: -5%;
+  
+    vertical-align: middle;
+    text-align: left;
+    color: white;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+.task{
+    padding-top: 8%;
+          //margin-top: 8% !important;        
+          text-align: center;
+}
+.items{
+    padding-bottom: 10% !important;
+  //  padding-top: 3% !important;
+}
+ion-footer{
+    bottom:-4px;
+}
+h5{
+    position: absolute;
+    left: 15px;
+    bottom: -4px;
+}
+}

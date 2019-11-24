@@ -1,0 +1,37 @@
+
+<ion-header class="deheaderback">
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      
+      <ion-title>{{item.title}} Offer</ion-title>
+  
+     
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding class="white-1">
+
+      <div class="hydro ribon shadow-3" style="">
+          <h5 class="task">Task Details</h5> 
+          </div> 
+          <br>  
+          <div class="items" [innerHTML]="item.details"></div>
+          
+      <div class="hydro ribon shadow-3" style="">
+          <h5 class="task">Steps:-</h5> 
+          </div> 
+          <br>  
+          <div class="items" [innerHTML]="item.des"></div>
+          <div class="hydro ribon shadow-3" style="">
+              <h5 class="task">Terms</h5> 
+              </div> 
+              <br>  
+              <div class="items" [innerHTML]="item.terms"></div>
+  </ion-content>
+  <ion-footer>
+    <button  (click)="openTab(item.id)" class="invite"large block ion-button >CONTINUE </button>
+
+  </ion-footer> 
+ 

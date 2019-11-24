@@ -1,0 +1,54 @@
+
+<ion-header style="    height: 30%;
+"class="deheaderback">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title style="color: white"></ion-title>
+
+    <ion-buttons right>
+    
+
+    </ion-buttons>
+  </ion-navbar>
+  <h1 class="text-white text-center pdt-5">Follow Us</h1>
+  <ion-card style=""class="messenger cardtop text-white  has-header shadow-3 ">
+       <ion-card-header class="text-white text-center">Follow Us On Social Media</ion-card-header>
+    <ion-card-content class="text-center">Follow us on below platforms & never miss any Offer Update</ion-card-content>
+    
+      <ion-list>
+          <button (click)="followclick('t')"ion-item class="text-grey-5">
+            <ion-icon style="color:#3381FF!important" name="paper-plane" class="fs-20" item-start></ion-icon>
+            Telegram Channel <span style="color:tomato!important"> (Recommanded)</span>
+          </button>
+    
+          <button (click)="followclick('y')" ion-item class="text-grey-5">
+            <ion-icon style="color:red!important"name="logo-youtube" class="fs-20" item-start></ion-icon>
+            Youtube
+          </button>
+    
+          <button (click)="followclick('g')"ion-item class="text-grey-5">
+            <ion-icon style="color:lightblue!important"name="contacts" class="fs-20" item-start></ion-icon>
+            Facebook Group
+          </button>
+    
+          <button (click)="followclick('f')"ion-item class="text-grey-5">
+            <ion-icon style="color:#4267B2!important"name="logo-facebook" class="fs-20" item-start></ion-icon>
+           Facebook Page
+          </button>
+    
+          <button (click)="followclick('m')"ion-item class="text-grey-5">
+            <ion-icon style="color:purple!important" name="mail" class="fs-20" item-start></ion-icon>
+            Email
+          </button>
+    
+          <button (click)="followclick('w')"ion-item class="text-grey-5">
+            <ion-icon  style="color:green!important" name="logo-whatsapp" class="fs-20" item-start></ion-icon>
+            Whatsapp
+          </button>
+        </ion-list>
+  </ion-card>
+</ion-header>
+  

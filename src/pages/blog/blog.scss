@@ -1,0 +1,19 @@
+page-blog {
+	.slideImage{
+		border-radius: 15px;
+	}
+	.thmb{
+		height: 139px;
+		object-fit: cover;
+	}
+	.toolbar[primary] .toolbar-title .toolbar[primary] .bar-button-default .toolbar-text{
+		color: white;
+		
+	  }
+	  .toolbar-title {
+		  color:white;
+	  }
+	  ion-header ion-icon.back-button-icon.icon {
+		color: white;
+	}
+}

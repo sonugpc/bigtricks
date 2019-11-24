@@ -1,5 +1,7 @@
 {
   "name": "newBigtricks",
-  "app_id": "",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

@@ -1,0 +1,359 @@
+page-invite {
+    background-color: aliceblue;
+.invite{
+    background-image: linear-gradient( 135deg, #F761A1 10%, #8C1BAB 100%);}
+    .block1{
+        text-align: center;
+  font-family: sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-weight: lighter;
+    }
+
+
+/***********************************
+ * Definition
+ ***********************************/
+/***********************************
+ * Use
+ ***********************************/
+ .ribbon-title--a {
+    /* Calc */
+    /* Props */
+    background-color: purple;
+    color: #fff;
+    display: block;
+    -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+    font-size: 35px;
+    line-height: 1;
+    margin: 20px auto;
+    max-width: 70%;
+    padding: 20px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 496px;
+    transition: all 300ms;
+  }
+  .ribbon-title--a::before, .ribbon-title--a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    border: 37.5px solid purple;
+    z-index: -1;
+  }
+  .ribbon-title--a::before {
+    left: -8px;
+    border-left: 8px solid transparent;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  .ribbon-title--a::after {
+    right: -8px;
+    border-right: 8px solid transparent;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  
+  .ribbon-title--b {
+    /* Calc */
+    /* Props */
+    background-color: #91040D;
+    color: #fff;
+    display: block;
+    -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+    font-size: 25px;
+    line-height: 1;
+    margin: 20px auto;
+    max-width: 70%;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 496px;
+    transition: all 300ms;
+  }
+  .ribbon-title--b::before, .ribbon-title--b::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    border: 22.5px solid #91040D;
+    z-index: -1;
+  }
+  .ribbon-title--b::before {
+    left: -30px;
+    border-left: 30px solid transparent;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .ribbon-title--b::after {
+    right: -30px;
+    border-right: 30px solid transparent;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .ribbon-title--link {
+    /* Calc */
+    /* Props */
+    background-color: #fff;
+    color: rgb(31, 29, 29);
+    display: block;
+    -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+    font-size: 30px;
+    line-height: 1;
+    top: 35%;
+    //left: 20%;
+    max-width: 170px;
+    height: 60px;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 496px;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+  }
+  .ribbon-title--link::before, .ribbon-title--link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    border: 30px solid #fff;
+    z-index: -1;
+  }
+  .ribbon-title--link::before {
+    left: -8px;
+    border-left: 8px solid transparent;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  .ribbon-title--link::after {
+    right: -8px;
+    border-right: 8px solid transparent;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .ribbon-title--link[href]:hover {
+    /* Calc */
+    /* Props */
+    background-color: #fff;
+    color: black;
+    display: block;
+    -webkit-filter: drop-shadow(0 5px 2px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0 5px 2px rgba(0, 0, 0, 0.5));
+    font-size: 18px;
+    line-height: 1;
+    margin: 20px auto;
+    max-width: 70%;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 496px;
+    transition: all 300ms;
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+  }
+
+ 
+.capation{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  bottom: 3px;
+  
+}
+
+
+
+  .backgrnd{
+
+   height: 65%;
+   position: relative;
+   text-align: -webkit-center;
+    width: -webkit-fill-available;
+    }
+    .backgrnd img{
+        text-align: center;
+        vertical-align: bottom;
+        width: 20%;
+        position: relative; bottom: 0;
+    }
+    .backgrnd .span{
+        color: #fff;
+        display: block;
+        /* -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5)); */
+        /* filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5)); */
+        font-size: 12px;
+        line-height: 1.2;
+        top: 40%;
+        max-width: 80%;
+        /* height: 67px; */
+        padding: 10px 0;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        /* width: 496px; */
+        
+        /* transition: all 300ms; */
+    }
+    .backgrnd .avt{
+        text-align: center;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+       
+    }
+    
+
+    #social {
+        margin: 20px 10px;
+        text-align: center;
+        position: absolute;
+        margin: 20px 10px;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .smGlobalBtn { /* global button class */
+          display: inline-block;
+          position: relative;
+          cursor: pointer;
+          width: 50px;
+          height: 50px;
+         // border:2px solid #ddd; /* add border to the buttons */
+          box-shadow: 0 3px 3px #999;
+          padding: 0px;
+          text-decoration: none;
+          text-align: center;
+          color: #fff;
+          font-size: 25px;
+          font-weight: normal;
+          line-height: 2em;
+          border-radius: 27px;
+          -moz-border-radius:27px;
+          -webkit-border-radius:27px;
+          margin: 1%
+      }
+      
+      /* facebook button class*/
+      .facebookBtn{
+          background: #4060A5;
+      }
+      
+      .facebookBtn:before{ /* use :before to add the relevant icons */
+          font-family: "FontAwesome";
+          content: "\f09a"; /* add facebook icon */
+      }
+      
+      .facebookBtn:hover{
+          color: #4060A5;
+          background: #fff;
+          border-color: #4060A5; /* change the border color on mouse hover */
+      }
+      
+      /* twitter button class*/
+      .twitterBtn{
+          background: #00ABE3;
+      }
+      
+      .twitterBtn:before{
+            font-family: "FontAwesome";
+            content: "\f099"; /* add twitter icon */
+            
+      }
+      
+      .twitterBtn:hover{
+            color: #00ABE3;
+            background: #fff;
+            border-color: #00ABE3;
+      }
+      
+      /* Telegram plus button class*/
+      .googleplusBtn{
+          background: #00ABE3;
+      }
+      
+      .googleplusBtn:before{
+            font-family: "FontAwesome";
+            content: "\f2c6"; /* add googleplus icon */
+      }
+      
+      .googleplusBtn:hover{
+            color: #00ABE3;
+            background: #fff;
+            border-color: #00ABE3;
+      }
+      
+      /* linkedin button class*/
+      .linkedinBtn{
+          background: #999;
+      }
+      
+      .linkedinBtn:before{
+            font-family: "FontAwesome";
+            content: "\f141 "; /* add linkedin icon */
+      }
+      
+      .linkedinBtn:hover{
+            color: rgba(82, 81, 85, 0.212);
+            background: #fff;
+            border-color: honeydew;
+      }
+      
+      /* pinterest button class*/
+      .pinterestBtn{
+          background: #25D366 !important;
+      }
+      
+      .pinterestBtn:before{
+            font-family: "FontAwesome";
+            content: "\f232"; /* add pinterest icon */
+      }
+      
+      .pinterestBtn:hover{
+            color: white;
+            background: #fff;
+            border-color: #25D366;
+      }
+      
+      /* tumblr button class*/
+      .tumblrBtn{
+          background: #3a5876;
+      }
+      
+      .tumblrBtn:before{
+            font-family: "FontAwesome";
+            content: "\f173"; /* add tumblr icon */
+      }
+      
+      .tumblrBtn:hover{
+            color: #3a5876;
+            background: #fff;
+            border-color: #3a5876;
+      }
+      
+      /* rss button class*/
+      .rssBtn{
+          background: #e88845;
+      }
+      
+      .rssBtn:before{
+            font-family: "FontAwesome";
+            content: "\f09e"; /* add rss icon */
+      }
+      
+      .rssBtn:hover{
+            color: #e88845;
+            background: #fff;
+            border-color: #e88845;
+      }
+      
+     
+
+}

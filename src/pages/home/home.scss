@@ -1,3 +1,31 @@
 page-home {
 
+.divAbove{
+width: 100%;
+object-fit: cover;
+}
+.cardCls{
+padding-top: 8px;
+padding-bottom: 15px;
+padding-right: 15px;
+}
+.background{
+   
+    background-color: aliceblue;
+
+
+}
+
+.cpnblk{
+    border-style: dotted;
+    border-width: 1px;
+    border-color: pink;
+    margin-left: 10px;
+}
+ion-buttons{
+    display:flex !important;
+    .button-md{
+            background-color: transparent;
+    }
+}
 }

@@ -1,0 +1,83 @@
+<!--
+  Generated template for the WordpressDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+ <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title style="color: white"> Contact Us</ion-title>
+
+    <ion-buttons right>
+    
+
+    </ion-buttons>
+  </ion-navbar>
+  
+</ion-header>
+
+
+ <ion-content class="tim-vs-datroi ">
+       
+          <div padding class=" pdt-50 pdb-50 main-form">
+            <h4 class="fs-18 fw-600 text-white-2 text-center">Send A Message</h4>
+            <p class="mgb-50 text-white-2 text-center fs-13">Enter all the required details. We will get in touch to you within 24 hours.</p>
+            <ion-list>
+                <ion-item class="text-white-2 white-opct">
+                    <ion-input type="text" [(ngModel)]="name" placeholder="Full Name"></ion-input>
+                </ion-item>
+            </ion-list>
+            <ion-list>
+                <ion-item class="text-white-2 white-opct">
+                    <ion-input type="email" [(ngModel)]="email" placeholder="Email"></ion-input>
+                </ion-item>
+            </ion-list>
+            <ion-list>
+                <ion-item class="text-white-2 white-opct">
+                    <ion-textarea type="text" [(ngModel)]="message" placeholder="Enter your query in detail"></ion-textarea>
+                </ion-item>
+            </ion-list>
+            <div class="text-center">
+              
+              <button ion-button round color="light"(click)="SendMsg()" block class="white-opct text-white shadow-1 mgt-15">                Send Message
+</button>
+
+            
+          </div>
+        </div>
+      
+        <div padding class="  mgt-40 mgb-30 text-black text-center ani-right-to-left">
+          <h6 class="text-white">Follow us on</h6>
+          <button (click)="followclick('f')" ion-button only-icon  class="transparent text-white">
+            <ion-icon style="zoom:2.0;" name="logo-facebook"></ion-icon>
+          </button>
+          <button (click)="followclick('tw')" ion-button only-icon  class="transparent text-white ">
+            <ion-icon style="zoom:2.0;" name="logo-twitter"></ion-icon>
+          </button>
+          <button (click)="followclick('w')" ion-button only-icon  class="transparent text-white ">
+            <ion-icon  style="zoom:2.0;" name="logo-whatsapp"></ion-icon>
+          </button>
+          <button (click)="followclick('t')" ion-button only-icon  class="transparent text-white ">
+            <ion-icon style="zoom:2.0;" name="paper-plane"></ion-icon>
+          </button>
+          <button (click)="followclick('l')"ion-button only-icon  class="transparent text-white ">
+            <ion-icon style="zoom:2.0;" name="logo-linkedin"></ion-icon>
+          </button>
+        </div>
+        <div padding class="  mgt-40 mgb-30 text-black text-center ani-right-to-left">
+                <h6 class="text-white">Email us at :</h6>
+              <h2 class="text-center text-white">support@bigtricks.in</h2>
+            
+        </div>
+      
+        <div padding class="logo-brand text-center ani-bottom-to-top">
+          <img src="assets/imgs/wj.png" alt="">
+          <p class="text-white-2 fs-12 pdl-20 pdr-20"></p>
+        </div>
+      
+      
+    </ion-content>

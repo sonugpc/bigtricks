@@ -1,0 +1,39 @@
+<ion-header class="">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Notifications</ion-title>
+
+    <ion-buttons right>
+
+
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="walletback">  
+      <p class="text-center fs-20 shadow-2 text-grey-4" *ngIf="isDataPresent">No Transactions</p>
+      <div *ngFor="let his of notifList" >
+      <br>
+        <ion-card style="height: 80px;" class="box2 black-opct bdra-5  text-white" (click)=handleBackgroundNotification(his) >
+            <div class="mgt-20"><ion-row>
+            <ion-col col-8>
+              <span class="fs-15">{{his.body}}</span><br>
+            </ion-col>
+            <ion-col     col-4>
+              <!--{{his.type==1? 'success':'failure'}}-->
+                <ion-icon class="nicon"  name="notifications"></ion-icon>
+                <span  class="fs-113"></span>
+            </ion-col>
+            </ion-row>
+          </div>
+            </ion-card>
+          </div>
+            <br>
+               
+<div *ngIf="isDataPresent"class="text-center text-white">
+No New Notification
+</div>
+</ion-content>

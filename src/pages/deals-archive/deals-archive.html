@@ -1,0 +1,74 @@
+
+<ion-header class="">
+    <ion-navbar>
+
+      <button ion-button menuToggle>
+          <ion-icon style="color:white" name="menu"></ion-icon>
+        </button>
+
+    <ion-title></ion-title>
+    <ion-buttons right>
+         
+    
+        <button ion-button icon-only  (click)="onClickSearchButton()">
+            <ion-icon class="pdr-5"style="color:white" name="md-search"></ion-icon>
+        </button>
+  
+       
+  
+      </ion-buttons>
+ 
+      <ion-searchbar *ngIf="searchShow" [(ngModel)]="query" [showCancelButton]="shouldShowCancel" (ionInput)="onInput()" class=""></ion-searchbar>
+
+  </ion-navbar>
+  <ion-segment [(ngModel)]="home_tabs" class="segment-btn-group text-white pdt-5 pdb-5 stroke-2 stroke-white bdra-5">
+      <ion-segment-button class="rainbowblue" (click)="gotoBlog()"value="offers">
+       Offers
+      </ion-segment-button>
+      <ion-segment-button class="messenger segment-activated" aria-pressed="true" value="deals" >
+          Loot Deals
+      </ion-segment-button>
+    </ion-segment>
+
+</ion-header>
+
+
+
+<ion-content class="offerback">
+
+
+  <ion-spinner class="indicator" [ngClass]="spnState"></ion-spinner>
+
+  <ion-row class="pdr-5 mgt-3 pdb-10">
+      <ion-col class="col ani-bottom-to-top " style="height:100%" col-6 *ngFor="let item of data">
+        <ion-card style="height: 200px"class=" thmb bdra-10 dealback full-width mg-0 shadow-2 featured_item"  (click)="wpService.doReadMore(navCtrl,item)">
+         <div class="text-center "> <img style="object-fit:contain;display:inline;height:100px;width:100px"class="text-center"*ngIf="item.thumb!=null" [src]="item.thumb">
+         </div>
+          <ion-card-content class="pd-5">
+            <h5 bold  [innerHTML]="item.title"></h5>
+            <hr />
+            <span></span>
+            <!-- <p class="fs-13" [innerHTML]="item.excerpt"></p> -->
+           
+             <tr style="width:100%">
+               <td  style="width:100%">
+               <span>{{item.salePrice}}</span>
+               <span class=" fs-10 text-grey-3 line-through text-d-orange">{{item.oldPrice}}</span> 
+              </td>
+          
+            <td  style="width:100%" class="text-right">
+            <button small ion-button round class="messenger ">Shop</button>
+          </td>
+        </tr>
+       
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      
+  
+      
+    </ion-row> 
+      <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

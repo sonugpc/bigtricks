@@ -1,0 +1,74 @@
+page-login-or-signup {
+    .white-text {
+		color:white;
+    }
+    .icon{
+		color:white;
+    }   
+    .cardtop{
+        margin-left: 5%;
+    //margin-top: 22%;
+    width: 90%;
+    height: 12%;
+    border-radius: 5px;
+    
+
+
+
+    }ion-footer{
+        bottom:-4px;
+    }
+    .topimage{
+        margin-top: 15%;
+        margin-left: 20%;
+        zoom: 0.75;
+    }
+    .divv{
+        margin-top: -5%;
+        height: 65%;
+	}
+	
+    
+    .bdy {
+		background-image: url("assets/imgs/back.png");
+
+		background-size: cover;
+		
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+    }
+.itemMobile{
+	width: 85% !important;
+    margin-left: 5% !important;
+    
+}
+.buttonblock{text-align: center;
+    z-index: 999;
+
+}
+   
+	.decor{
+		z-index: 5;
+		position: absolute;
+		height: 400px;
+		width: 400px;
+		border-radius: 50%;
+		top: -170px;
+		right: -190px;
+	}
+	.decor-2{
+        z-index: 999;
+        height: 226px;
+        width: 236px;
+        border-radius: 62%;
+        top: 97px;
+        margin-bottom: -91px;
+        margin-left: -24%;
+        right: 46px;
+    }
+    .z{
+        z-index: 1000;
+    }
+	
+}

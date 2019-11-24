@@ -1,0 +1,65 @@
+
+<ion-header class="">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title>Wallet</ion-title>
+
+    <ion-buttons right>
+     
+
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="walletBack">
+  <ion-card padding class="invite bdra-5 text-white"style="position:relative;height:30%">
+    <span>Balance</span> 
+    <button style="float:right" (click)="redeemPage()"round class="text-d-purple white-2" ion-button >Redeem</button>
+    <h1 class="text-white">₹{{aRs}}</h1>
+    <div style="
+    width: 80%;
+    margin-top: 25px;
+"> <table style="    border-spacing: 3px;
+    border-collapse: separate;">
+      <tr>
+        <td>
+         <tr> Approved Coins</tr>
+        <tr><i class="fa cls fa-database" aria-hidden="true"></i>{{aCoins}}</tr>
+        </td>
+        <td>
+          <tr>Pending Coins</tr>
+        <tr><i class="fa cls fa-database" aria-hidden="true"></i>{{pCoins}}</tr>
+        </td>
+      </tr>
+    </table> </div>
+    <ion-row class=" white-opct-1 row row" style="
+    width: 115%;
+    height: 20px;
+    padding-left: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+">
+ 1000 Coins = ₹1
+</ion-row>
+
+</ion-card>
+
+<ion-card padding class="invite bdra-5 text-white"style="position:relative;height:15%">
+ <div class="    float: left;
+ margin-top: 5%;">Refer Your Friends & Earn Coins</div>
+  <button style="float:right" (click)="referPage()"round class="text-d-purple white-2" ion-button >INVITE</button>
+
+</ion-card>
+<ion-card padding class="invite bdra-5 text-white"style="position:relative;height:15%">
+<div  class="    float: left;
+margin-top: 5%;"> Earn Coins with Sponsored Offers</div>
+ <button style="float:right" (click)="offerPage()"round class="text-d-purple white-2" ion-button >Offer Wall</button>
+
+ </ion-card>
+</ion-content>

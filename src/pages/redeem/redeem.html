@@ -1,0 +1,36 @@
+
+<ion-header class="">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title>Redeem</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<div class="walletback" padding>
+<div class="boxdiv">
+    <h4 class=" fs-16 text-center text-white	fw-600 uppercase pdt-30 mgb-0">Available Balance - ₹{{aRs}}</h4>
+ <div style="text-align: center"><img src="https://www.bigtricks.in/app2/assets/paytm.png" style="object-fit: contain;height: 50px;
+ width: 150px;"/></div>
+<p class="text-white text-center fs-15 fw-100">Transfer to PayTM wallet Linked with {{userdata.mobile}}</p>
+ <ion-item style="background-color: transparent; " class="text-white transparant ">
+    <ion-label>Amount</ion-label>
+    <ion-select  class="transparant "interface="popover" [(ngModel)]="amount">
+      <ion-option value="fc241ec2669cc09d984b5ce23f71ffca">₹20</ion-option>
+      <ion-option value="9b4eec93aa8ef703314edeaf3c3b5caf">₹50</ion-option>
+      <ion-option value="2405c79d70f52098b0647f79e96616d8">₹100</ion-option>
+    </ion-select>
+    </ion-item>
+ <br>
+ <div class="text-center">
+ <button (click)=redeem() ion-button round class="btn">Transfer to PayTM</button>
+</div>
+</div>
+</div>
+<p class="fs-18 fw-500 text-center text-md-light" style="
+    position: absolute;
+    bottom: 0;
+">You need to have atleast ₹50 to Redeem</p>

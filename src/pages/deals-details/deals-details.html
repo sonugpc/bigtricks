@@ -1,0 +1,83 @@
+
+<ion-header class="deheaderback">
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      
+      <ion-title class="text-white"[innerHTML]="title"></ion-title>
+  
+      <ion-buttons right>
+       
+  
+        <button ion-button icon-only small (click)="wpService.doShare(post)">
+            <ion-icon class="fs-18" name="md-share"></ion-icon>
+        </button>
+  
+        <button ion-button icon-only small (click)="openInTab()">
+            <ion-icon class="fs-18" name="md-open"></ion-icon>
+        </button>
+  
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content elastic-header class="">
+   <ion-spinner class="indicator" [ngClass]="spnState"></ion-spinner> 
+   <img *ngIf="post==null" style="    margin: 10px;margin-bottom: 14%; margin-top: 25%; margin-left: -2%;"src="https://www.bigtricks.in/app2/assets/noLoadData.png" />
+
+   <div *ngIf="post!=null"  class="">
+  
+      
+      <ion-card class=" shadow-2 bdra-5 pd-10">
+        <div class="banner ">
+            <div class="bg-banner">
+              <img class="pd-30 thmb"style="height:200px;    object-fit: contain;"[src]="thumb">
+            </div>
+          </div>
+        
+          <ion-card-title class="fs-18 fw-600 uppercase card-title card-title-md" [innerHTML]="post.title"></ion-card-title> 
+         <ion-card-content>
+          <img class="pull-left" style="width:25%;height:20%" src="{{post.storeImage}}" />   <span class="date text-grey-3 fs-13 pull-right">{{date}}</span>
+
+    <ion-row class="full-width pdt-5 pdb-5">
+        <ion-col col-4 class="text-grey-4 text-center">
+            <ion-icon  class="fs-30 icon1" ios="ios-eye" md="md-eye"></ion-icon>
+            <p class="text-grey-4 fs-13">{{views}} Views</p>
+        </ion-col>
+        <ion-col col-4 class="text-grey-4 text-center">
+            <ion-icon class="fs-30 icon1"name="chatbubbles"></ion-icon>
+            <p class="text-grey-4 fs-13">{{comment_count}} Comments</p>
+        </ion-col>
+        <ion-col col-4 class="text-grey-4 text-center">
+            <ion-icon  class="fs-30 icon1" name="thumbs-up"></ion-icon>
+            <p class="text-grey-4 fs-13">{{likes}} Likes</p>
+        </ion-col>
+       
+      </ion-row>
+      <tbody>
+      <tr class="pdt-5"style="width:100%">
+          <td  style="width:100%">
+          <h2 class="text-d-orange">{{post.salePrice}}</h2>
+          <span class=" fs-10 text-grey-3 line-through ">{{post.oldPrice}}</span> 
+         </td>
+       <td  style="width:100%" class="text-right">
+       <button (click)="openTab()" *ngIf="url!=''"ion-button round class="messenger ">Buy Now</button>
+     </td>
+   </tr>
+  </tbody>
+   <hr>
+   <p class="" [innerHTML]="post.content"></p>
+
+    </ion-card-content>
+        </ion-card >
+        <!-- <p class="" [innerHTML]="post.content"></p> -->
+
+    </div>
+  </ion-content>
+ <ion-footer>
+    <button (click)="openTab()" *ngIf="url!=''" class="messenger"large block ion-button >Buy Now </button>
+
+  </ion-footer> 
+  
+  

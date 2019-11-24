@@ -1,1 +1,116 @@
-<ion-nav [root]="rootPage"></ion-nav>
+
+<ion-menu class="" [content]="content" id="menu-avatar">
+
+  <ion-content class="lot-vs-phan ">
+    
+    <div *ngIf="cs.token!=null"class=" menucl info-user mgb-30 pdt-50 pdb-20 ">
+      <!-- <button ion-button clear only-icon small (click)="gotoSetting()"class="user-setting text-grey-1"><ion-icon name="ios-settings"></ion-icon></button> -->
+      <div class="bg-img l-blue"></div>
+      <div class="wrapper-avt mgl-15 mgr-10">
+        <img src="assets/imgs/avt1.png" alt="">
+      </div>
+      <div class="main-info ">
+        <h2 class="user-name fs-20 fw-600 mg-0 text-white">{{cs.userdata.name}} </h2>
+
+        <button ion-button clear small class="pd-0 mg-0 text-left text-grey-1">{{cs.userdata.email}}</button>
+      </div>
+    </div>
+
+    <div *ngIf="cs.token==null"class=" menucl info-user mgb-30 pdt-50 pdb-20 ">
+      <!-- <button ion-button clear only-icon small (click)="gotoSetting()"class="user-setting text-grey-1"><ion-icon name="ios-settings"></ion-icon></button> -->
+      <div class="bg-img shadow-3"></div>
+      <div style="margin-left: 20% !important"class="wrapper-avt mgl-40 greeng text-center mgr-10">
+      </div>
+      <br />
+      <div class="text-center">
+        <button menuClose="menu-avatar" class="greeng shadow-3" round (click)="login()"ion-button>Login</button>
+      </div>
+    </div>
+    <ion-list no-lines class="">
+    
+
+         
+          <ion-item-group transparant>
+            <button submenu-item menuClose ion-item icon-left  class="transparent" (click)="setRootHome()">
+              <ion-icon name=home item-left></ion-icon>
+              Home
+            </button>
+          </ion-item-group>
+          <ion-item-group transparant>
+              <button submenu-item menuClose ion-item icon-left  class="transparent" (click)="account_menu(5)">
+                <ion-icon name=apps item-left></ion-icon>
+                Paying Offers
+              </button>
+            </ion-item-group>
+            <ion-item-group transparant>
+                <button submenu-item menuClose ion-item icon-left  class="transparent" (click)="account_menu(6)">
+                  <ion-icon name=cart item-left></ion-icon>
+                  All in One Shopping
+                </button>
+              </ion-item-group>
+              <ion-item-group *ngIf="cs.gamelist" transparant>
+                  <button submenu-item menuClose ion-item icon-left  class="transparent" (click)="games()">
+                    <ion-icon name="cs.gamezop.icon" item-left></ion-icon>
+                    {{cs.gamezop.title}}
+                  </button>
+                </ion-item-group>
+                <ion-item-group *ngIf="cs.surveylist"transparant>
+                    <button submenu-item menuClose ion-item icon-left  class="transparent" (click)="surveys()">
+                      <ion-icon name="cs.cashbig.icon" item-left></ion-icon>
+                      {{cs.cashbig.title}}
+                    </button>
+                  </ion-item-group>
+            
+      <ion-list  *ngIf='cs.token!=null' class="tree mgb-0">
+        
+          <ion-list class="tree mgb-0">
+            <ion-item icon-left class="btn-open-more transparent">
+              <ion-label ion-left><ion-icon class="mgr-15 pdr-5 text-center" name="contact"></ion-icon>My Account</ion-label>
+              <ion-checkbox [(ngModel)]="show_drop" class="hidden-checkbox" color="dark"></ion-checkbox>
+              <ion-icon *ngIf="show_drop==false||show_drop==undefined" name="arrow-dropdown" item-end color="dark" class="fs-12 white-opct  bdra-5"></ion-icon>
+              <ion-icon *ngIf="show_drop==true" name="arrow-dropup" item-end color="dark" class="fs-12 white-opct  bdra-5"></ion-icon>
+
+            </ion-item>
+
+            <ion-row class="dropdown" [ngClass]="{'active' : (show_drop == true)}">
+              <button (click)="account_menu(1)" menuClose="menu-avatar"  ion-item small class="transparent fs-14">
+                <ion-icon name="md-radio-button-off" class="fs-8 text-center pdr-5 mgl-35 mgr-5"></ion-icon>
+               Wallet
+              </button>
+              <button (click)="account_menu(2)" menuClose="menu-avatar" ion-item small class="transparent fs-14">
+                <ion-icon name="md-radio-button-off" class="fs-8 text-center pdr-5 mgl-35 mgr-5"></ion-icon>
+               Transaction History
+              </button>
+              <button (click)="account_menu(3)" menuClose="menu-avatar" ion-item small class="transparent fs-14">
+                <ion-icon name="md-radio-button-off" class="fs-8 text-center pdr-5 mgl-35 mgr-5"></ion-icon>
+                Refer & Earn
+              </button>
+             
+            </ion-row>
+          </ion-list>
+        </ion-list>
+      
+        <button menuClose="menu-avatar" ion-item icon-left *ngFor="let p of pages" class="transparent" (click)="openPage(p)">
+          <!-- <ion-icon style="zoom: 1.3;color:#663399" class="gtx"name="{{p.icon}}" item-left></ion-icon> -->
+          <ion-icon name={{p.icon}} item-left></ion-icon>
+          {{p.title}}
+        </button>
+       
+        <ion-item-group *ngIf='cs.token!=null' transparant>
+            <button submenu-item menuClose ion-item icon-left  class="transparent" (click)="logout()">
+              <ion-icon name="log-out" item-left></ion-icon>
+              Logout
+            </button>
+          </ion-item-group>
+       
+      
+    </ion-list>
+    
+  </ion-content>
+</ion-menu>
+
+
+
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

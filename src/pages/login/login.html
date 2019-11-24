@@ -1,0 +1,35 @@
+<div class="bdy">
+    <div style="
+    text-align: right;
+    margin: 0px;
+    position: relative;
+    float: right;
+    padding: 29px;
+" class="fs-20 fw-300 pdt pdt-30 text-white"> <span (click)="skipPress()"right="">SKIP</span></div>
+  
+    <img class="topimage"src="assets/imgs/slg.png" />
+    <div class="divblk1">
+  <h1 class="text-black text-center pdt-5">Welcome</h1>
+  <p class="text-black text-center pdt-5">Let's get started to access latest shopping offers, loot deals, Wallet rewards & much more </p>
+  <ion-item class="white itemMobile">
+    <ion-label color="primary" floating>Enter Mobile Number</ion-label>
+  
+  <ion-input  [(ngModel)]="mobile" (ionFocus)="checkFocus()" type="tel" maxlength="16" style="">
+    
+  </ion-input>
+  
+</ion-item>
+
+<div class="transparent buttonblock">
+<button (click)="checkUser()"class="messenger shadow-3 pd-20 mg-10 bdra-30" *ngIf=!indicator ion-button >GET STARTED</button>
+<button ion-button *ngIf=indicator class="text-white messenger shadow-3 pd-20 mg-10 bdra-30"><ion-spinner name="crescent"></ion-spinner></button>
+
+</div>
+    
+</div>
+<div class=divblk >
+   <p class="text-left mg-5 pd-10 text-black "> By proceeding, you agree to Bigtricks' <a href="https://www.bigtricks.in/terms/?utm_source=app">Terms &amp; Conditions</a> and <a href="https://www.bigtricks.in/mobile-app-privacy-policy/">Privacy Policy</a></p>
+
+
+  </div>
+</div>

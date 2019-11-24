@@ -1,0 +1,25 @@
+<!--Theme Wizard Simple + icon-->
+<!--Content -->
+<ion-content class="bdy">
+<ion-slides #wizardSlider (ionSlideDidChange)="slideHasChanged()" pager="true" *ngIf="data != null">
+  <ion-slide *ngFor="let item of data" padding>
+     <!-- <svg logo [src]="item.logo" > </svg> -->
+      <h1 text-left wizard-title indigo padding-horizontal>{{item.h1}}</h1>
+      <p text-left wizard-description  grey-2 padding-horizontal>{{item.h2}}</p>
+      <p text-left wizard-description grey-2 padding-horizontal>{{item.h3}}</p>
+  </ion-slide>
+</ion-slides>
+<!-- Button section-->
+<div *ngIf="data != null">
+  <button ion-button button-clear text-capitalize clear float-left (click)="changeSlide(-1)" *ngIf="prev">
+    Previous
+</button>
+  <button ion-button button-clear text-capitalize clear float-right (click)="changeSlide(1)" *ngIf="next">
+    Next
+</button>
+  <button ion-button button-clear text-capitalize clear float-right (click)="onEvent('onFinish')" *ngIf="finish">
+    Get Started
+</button>
+</div>
+</ion-content>
+<div class="decor-2 deheaderback"></div>

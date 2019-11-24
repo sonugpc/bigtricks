@@ -1,0 +1,103 @@
+
+  <ion-content class="white-1">
+      <ion-header  class="transparant">
+          <ion-navbar>
+            <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
+            
+            <ion-title class="texthide text-white"[innerHTML]="title"></ion-title>
+        
+            <ion-buttons right>
+              <button class="favorite" ion-button icon-only  (click)="wpService.doFavorite(favorite_post)" >
+                  <ion-icon   [name]="favorite_post.isFavorite == true ? 'heart' : 'heart-outline'"></ion-icon>
+              </button>
+        
+              <button ion-button icon-only  (click)="wpService.doShare(post)">
+                  <ion-icon name="md-share"></ion-icon>
+              </button>
+        
+              <button ion-button icon-only  (click)='openPostUrl()'>
+                  <ion-icon class="" name="md-open"></ion-icon>
+              </button>
+        
+            </ion-buttons>
+          </ion-navbar>
+        </ion-header> 
+   <ion-item style="height:20%" class="deheaderback"></ion-item> 
+     <ion-spinner class="indicator" [ngClass]="spnState"></ion-spinner> 
+   <img *ngIf="post==null" style="    margin: 10px;margin-bottom: 14%; margin-top: 25%; margin-left: -2%;"src="https://www.bigtricks.in/app2/assets/noLoadData.png" />
+   <div  *ngIf="post!=null" padding class="">
+  
+      
+        <div style="margin-top: -15%"class="banner ovfl-hidden">
+            <div class="bg-banner">
+              <img style="    border-radius: 10px;" [src]="thumb">
+            </div>
+          </div>
+          <ion-card-title class="fs-18 fw-600 uppercase card-title card-title-md" [innerHTML]="post.title"></ion-card-title> 
+
+          <p class="date text-grey-3 fs-13 text-center ani-fade-out">{{date}}</p>
+    
+          <div class="info text-center mgt-15 mgb-40 block ani-bottom-to-top">
+            <span class="fs-13 grey-2 pdl-10 pdr-10 pdt-5 pdb-5 text-grey-5"><ion-icon class="mgr-10" name="ios-eye"></ion-icon>{{views}}</span>
+            <span class="fs-13 grey-2 pdl-10 pdr-10 pdt-5 pdb-5 text-grey-5"><ion-icon class="mgr-10" name="ios-chatbubbles"></ion-icon>{{comment_count}}</span>
+            <span class="fs-13 grey-2 pdl-10 pdr-10 pdt-5 pdb-5 text-grey-5"><ion-icon class="mgr-10" name="ios-person"></ion-icon>by <b>{{author}}</b></span>
+          </div>
+        <p class="" [innerHTML]="post.content"></p>
+  
+      
+    </div>
+    <!--New Comment-->
+    <div class="ani-bottom-to-top">
+        <p padding class="fs-18 fw-600"><ion-icon class="text-black mgr-10 ani-left-to-right" name="ios-chatbubbles">
+          </ion-icon>Comments: <b class="text-red">{{comment_count}}</b>
+        </p>
+    
+        <ion-list no-lines class=" lst-comments ani-fade-out">
+          <ion-item >
+            <ion-avatar item-start>
+              <img src="assets/imgs/avt1.png">
+            </ion-avatar>
+            
+            <ion-item class="grey-1 fs-14 bdra-5">
+              <ion-textarea type="text" [(ngModel)]="commentdata"placeholder="Please Share Your Views"></ion-textarea>
+            </ion-item>
+    
+            <button (click)="submitcomment()" ion-button small icon-left class="pdl-0 blue text-white bdra-5">
+              <ion-icon class="fs-16" name="ios-add"></ion-icon>Add comment
+            </button>
+    
+          </ion-item>
+        </ion-list>
+      </div>
+      
+    
+      <ion-list no-lines class="lst-no-background lst-comments ani-bottom-to-top">
+        <ion-item *ngFor="let item of comments" class="ani-bottom-to-left">
+          <ion-avatar item-start>
+            <img src="assets/imgs/avt1.png">
+          </ion-avatar>
+          <ion-row>
+            <h2 class="fs-16 fw-600">{{item.name}}</h2>
+            <span class="pull-right mgl-20 fs-13 text-grey-2 mgt-5" [innerHTML]="item.date"></span>
+          </ion-row>
+          <ion-row class="mgt-10">
+            <p class="text-cm" style="display : block; overflow-wrap: break-word; max-width : 100%;"[innerHTML]="item.content"></p>
+            <!-- <button ion-button clear small icon-left class="pdl-0">
+              <ion-icon class="fs-16 text-black" name="ios-chatbubbles-outline"></ion-icon>Reply
+            </button> -->
+            
+          </ion-row>
+        </ion-item>
+        
+      </ion-list>
+    
+    
+  </ion-content>
+  <ion-footer>
+    <button  (click)="openComments(post_id)"*ngIf="url!=''" class="newblue"large block ion-button >Comment </button>
+
+  </ion-footer> 
+  
+  

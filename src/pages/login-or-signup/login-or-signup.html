@@ -1,0 +1,111 @@
+
+
+
+<div padding class="bdy" >
+  <div *ngIf="login=='login'" >
+    <div  style="
+    float: right" class="fs-20 fw-300 pdt pdt-5 text-right text-white"> 
+<h2 right="">Login</h2></div>
+  <h1 class="text-black text-left pdt-5">Welcome Back</h1>
+  <p class="text-black text-left pdt-5">{{this.mobile}}</p>
+
+  
+<ion-item   class="itemMobile transparent">
+    <ion-label color="primary" floating>Enter Password</ion-label>
+  
+  <ion-input  [(ngModel)]="loginPassword"  type="password" style=""> </ion-input>
+  
+</ion-item>
+<ion-item (click)="loginByOTP()"class="text-blue itemMobile transparent pdt-10" no-lines>
+Login Via OTP
+</ion-item >
+<div class="transparent buttonblock">
+<button *ngIf=!indicator style="   padding-left: 75px !important;
+padding-right: 75px !important;" (click)="loginByPassword()"class="messenger shadow-3 pd-10 mg-10 bdra-30"  ion-button >LOGIN </button>
+<button ion-button *ngIf=indicator class="text-white messenger shadow-3 pd-20 mg-10 bdra-30"><ion-spinner name="crescent"></ion-spinner></button>
+
+</div>
+</div>
+<!----------------SIgnup Screen------------>
+<div padding *ngIf="login=='signup'">
+<div style="
+text-align: right;
+float: right;
+" class="fs-20 fw-300 pdt pdt-30 text-white"> <h2 right="">Register</h2></div>
+
+
+<ion-item class="itemMobile transparent">
+<ion-label color="primary" floating>Full Name</ion-label>
+
+<ion-input  [(ngModel)]="name"  type="text" style=""> </ion-input>
+
+</ion-item>
+<ion-item class="itemMobile transparent">
+    <ion-label color="primary" floating>Email</ion-label>
+    
+    <ion-input  [(ngModel)]="email"  type="text" style=""> </ion-input>
+    
+    </ion-item>
+    <ion-item class="itemMobile transparent">
+        <ion-label color="primary" floating>Password</ion-label>
+        
+        <ion-input  [(ngModel)]="password"  type="password" style=""> </ion-input>
+        
+        </ion-item>
+    <ion-item class="itemMobile transparent">
+        <ion-label color="primary" floating>Have a Referral Code?</ion-label>
+        
+        <ion-input  [(ngModel)]="refC"  type="text" style="text-transform:uppercase"> </ion-input>
+        
+        </ion-item>
+        <ion-item class="grey itemMobile "> 
+          We have sent a "4-digit OTP" on {{mobile}} 
+            <ion-label color="primary" floating>Enter OTP</ion-label>
+            
+            <ion-input  [(ngModel)]="otp"  type="tel" style=""> </ion-input>
+            
+            </ion-item>
+
+
+<div class="transparent buttonblock pdt-10">
+<button *ngIf=!indicator (click)="resend()"class="z menucl shadow-3 pd-20 mg-10 bdra-30"  ion-button >Resend OTP</button>
+<button *ngIf=!indicator (click)="signupFn()"class="z messenger shadow-3 pd-20 mg-10 bdra-30"  ion-button >Signup Now</button>
+<button ion-button *ngIf=indicator class="text-white z messenger shadow-3 pd-20 mg-10 bdra-30"><ion-spinner name="crescent"></ion-spinner></button>
+
+</div>
+</div>
+   
+    
+
+<!---OTP Screen-->
+<div padding *ngIf="login=='otp'" >
+  <div  style="
+  float: right" class="fs-20 fw-300 pdt pdt-30 text-right text-white"> 
+<h2 right="">Login</h2></div>
+<h1 class="text-black text-left pdt-5">Welcome Back</h1>
+<p class="text-black text-left pdt-5">{{this.mobile}}</p>
+<p class="text-black text-left pdt-5">A one time verification code sent to Your mobile number</p>
+
+<ion-item   class="itemMobile transparent">
+  <ion-label color="primary" floating>Enter OTP</ion-label>
+
+<ion-input  [(ngModel)]="otp"  type="tel" style=""> </ion-input>
+
+</ion-item>
+<ion-item (click)="resend()" class="text-blue itemMobile transparent pdt-10" no-lines>
+Resend
+</ion-item >
+<div class="transparent buttonblock">
+<button  *ngIf=!indicator style="   padding-left: 75px !important;
+padding-right: 75px !important;" (click)="loginByOTPFn()"class="messenger shadow-3 pd-10 mg-10 bdra-30"  ion-button >LOGIN </button>
+<button ion-button *ngIf=indicator class="text-white messenger shadow-3 pd-20 mg-10 bdra-30"><ion-spinner name="crescent"></ion-spinner></button>
+
+</div>
+</div>
+</div>
+<ion-footer>
+   <!-- <p class="text-left mg-5 pd-10 text-black"> By proceeding, you agree to Bigtricks' Terms & Conditions and Privacy Policy</p> -->
+<div class="decor-2 messenger"></div>
+
+  </ion-footer>
+ 

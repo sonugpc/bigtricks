@@ -1,0 +1,23 @@
+page-wallet {
+.walletBack{
+    background-image: linear-gradient( 135deg, #3B2667 10%, #BC78EC 100%);
+}
+.cls{
+    margin-right: 5%;
+    -webkit-background-clip: text !important;
+    color: #9c47fc !important;
+    -webkit-text-fill-color: transparent !important;
+    background-image: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%);
+}
+.icn{
+    //margin-left: 0;
+   // margin-top: 11px;
+   // margin-bottom: 10px;
+    //font-size: 30px !important;
+    color: #9c47fc !important;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding-right: 15px;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+}

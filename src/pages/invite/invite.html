@@ -1,0 +1,89 @@
+<ion-header class="">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Refer a Friend</ion-title>
+
+    <ion-buttons right>
+
+
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<div class="invite backgrnd">
+
+ 
+ <div  (click)="copyFunction()"  class="ribbon-title--link shadow-3">{{ref}} <br>
+<span  class="capation text-indigo fs-13"> Tap to copy</span>
+
+
+  </div>
+<span class="span" [innerHTML]="msg"padding></span>
+
+ <div class="avt">
+  <img src="https://www.bigtricks.in/app2/assets/girl.svg" alt="Kiwi standing on oval">
+  <img src="https://www.bigtricks.in/app2/assets/boy.svg" alt="Kiwi standing on oval">
+  <img  src="https://www.bigtricks.in/app2/assets/man.svg" alt="Kiwi standing on oval">
+</div>
+</div>
+<div>
+<div class="fs-19 fw-400 gray text-center" style="
+       margin-top: 25%;
+       
+">Share With</div><div id="social">
+    <button (click)="share(1)"class="pinterestBtn  smGlobalBtn"  ></button>
+    <button (click)="share(2)"class="googleplusBtn smGlobalBtn"  ></button>
+  <button (click)="share(3)"class="facebookBtn smGlobalBtn"  ></button>
+  <button (click)="share(4)"class="twitterBtn smGlobalBtn" ></button>
+  <button (click)="share(5)"class="linkedinBtn smGlobalBtn"></button>
+
+</div>
+
+
+</div>
+<!-- <ion-header class="deheaderback">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Refer & Earn PayTM cash</ion-title>
+
+    <ion-buttons right>
+
+
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+  <img src="https://www.bigtricks.in/app2/assets/ref.jpg" />
+ <ion-card class="invite bdra-9"style="height:30%">
+
+  </ion-card> 
+  <div class="padding mgt-10 bdra-5 block1 mgt-10 pdt-16" style="    background-position-y: -148px;
+  background-position-x: center;background-image: url(https://www.bigtricks.in/app2/assets/web.jpg)">
+    <h4>Refer &amp; Earn</h4>
+    <span class="text-indigo"style="font-size: xx-large;">Rs.220</span>
+    <hr>
+    Get 1000 Points as soon as your friend installs &amp; register on Bigtricks App
+    Get a chance to win upto Rs.2000 for 10 lucky users
+  </div>
+  <div class="block2 ">
+    <span class="fw-300 text-center">Referral Code</span>
+    <ion-row>
+      <ion-col>
+    <div style="border-style: groove;width: 140%;">{{ref}}</div> </ion-col> <ion-col><div style="       width: 69%;
+      float: right; margin-top: -5px;"><button ion-button round outline>Copy </button></div></ion-col>
+  </ion-row>
+  </div>
+</ion-content>
+<ion-footer>
+    <button  (click)="openComments(post_id)" class="invite"large block ion-button >Invite Friends </button>
+
+  </ion-footer>  -->

@@ -1,0 +1,60 @@
+<!--
+  Generated template for the WordpressFavoritePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Favorites</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="doClear()">
+      <ion-icon class="fs-24 text-grey-5" name="trash">
+      </ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="white-1">
+<ion-card *ngFor="let item of data" class="bdra-5 card card-md">
+    <img *ngIf="item.thumb!=null" [src]="item.thumb" (click)="wpService.doReadMore(navCtrl,item)">
+    <ion-card-content class="card-content card-content-md" (click)="wpService.doReadMore(navCtrl,item)">
+      <ion-card-title class="fs-16 fw-600 card-title card-title-md" [innerHTML]="item.title"></ion-card-title>
+      <p  [innerHTML]="item.excerpt"></p>
+    </ion-card-content>
+
+    <ion-row class="row">
+      <ion-col>
+        <button (click)="doFavorite(item)" ion-button icon-left clear small class="text-grey-5 favorite">
+          <ion-icon  [name]="item.isFavorite == true ? 'heart' : 'heart-outline'"></ion-icon>
+        </button>
+      </ion-col>
+
+      <ion-col center text-center>
+         <button (click)="wpService.doShare(item)" ion-button icon-left clear small class="text-grey-5">
+             <ion-icon name="md-share"></ion-icon>
+        </button>
+      </ion-col>
+
+      <ion-col right text-right>
+        <button (click)="wpService.doOpen(item)" ion-button icon-left clear small class="text-grey-5">
+          <ion-icon name="md-open"></ion-icon>
+        </button>
+      </ion-col>
+      
+      <ion-col right text-right>
+        <button (click)="wpService.doReadMore(navCtrl,item)" ion-button icon-left clear small class="text-grey-5 fs-20">
+          <ion-icon name="ios-more"></ion-icon>
+        </button>
+      </ion-col>
+
+    </ion-row>
+  </ion-card>
+</ion-content>

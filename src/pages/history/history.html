@@ -1,0 +1,42 @@
+
+<ion-header transparant class="">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title>Transaction History</ion-title>
+
+    <ion-buttons right>
+     
+
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+  
+  <ion-content class="walletback">
+    <p class="text-center fs-20 shadow-2 text-grey-4" *ngIf="isDataPresent">No Transactions</p>
+    <div *ngFor="let his of histData" >
+    <br>
+      <ion-card style="height: 80px;" class="box2 black-opct bdra-5  text-white"  >
+          <div class="mgt-20"><ion-row>
+          <ion-col col-8>
+            <span class="fs-15">{{his.tName}}</span><br>
+            <span class="fs-11">TXN Id: {{his.id}}</span>
+          </ion-col>
+          <ion-col     col-4>
+            <!--{{his.type==1? 'success':'failure'}}-->
+              <ion-icon class=" fs-13"  name="arrow-round-{{his.type}}"></ion-icon>
+              <span  class="fs-113"><i class="fa cls fa-database" aria-hidden="true"></i> &nbsp; {{his.amount}}</span><br>
+              <span class="fs-11"> {{his.time}} Days ago </span>
+            </ion-col>
+          </ion-row>
+        </div>
+          </ion-card>
+        </div>
+          <br>
+         
+  </ion-content>
+  

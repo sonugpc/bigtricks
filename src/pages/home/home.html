@@ -1,17 +1,90 @@
-<ion-header>
+<ion-header class="deheaderback">
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title class="text-white">Get Link </ion-title>
+
+   
   </ion-navbar>
 </ion-header>
+<ion-content class="background">
+  <div class="divAbove">
+    <img src="https://www.bigtricks.in/app2/assets/link_banner.jpg" />
+  </div>
+  <ion-card class="cardCls ">
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+    <ion-item>
+      <ion-label>Store</ion-label>
+      <ion-select [(ngModel)]="storeS">
+
+        <ion-option *ngFor="let store of stores" [value]="store">{{store.store}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>URL(optional)</ion-label>
+
+      <ion-input lines [(ngModel)]="link" type="text" name="link"></ion-input>
+    </ion-item>
+    <div *ngIf="showBox" class="cpnblk">
+        <ion-row>
+            <ion-col col-8>
+              <span class="fs-20"><i>{{StoreS}}</i></span><br>
+              <span class="fs-11" [innerHTML]="generatedUrl"></span>
+            </ion-col>
+            <ion-col     col-4>
+                <ion-buttons class="buttons"right>
+                   
+              
+                    <button  class="transparant text-black" ion-button icon-only  (click)="shareLink(generatedUrl)">
+                        <ion-icon name="md-share"></ion-icon>
+                    </button>
+              
+                    <button class="transparant text-black" ion-button icon-only  (click)='copyUrl(generatedUrl)'>
+                        <ion-icon class="" name="copy"></ion-icon>
+                    </button>
+              
+                  </ion-buttons>
+            </ion-col>
+            </ion-row>
+    </div>
+  </ion-card>
+
+
+
+  <div class="text-center "><button *ngIf="indicator"style="width: 100px" ion-button class="bdra-25 invite" ion-button (click)="generate()">Generate</button>
+    <button *ngIf="!indicator"style="width: 100px" ion-button class="bdra-25 invite" ion-button (click)="generate()"><ion-spinner name="crescent"></ion-spinner></button>
+  </div>
+  <h4>Recently Generated Links</h4>
+  <!-- <div>
+      <ion-card style="height: 80px;" class="box2  bdra-5 "  >
+          <div class="mgt-20"><ion-row>
+          <ion-col col-8>
+            <span class="fs-20"><i>Flipkart</i></span><br>
+            <span class="fs-11">https://www.bit.lu/cdcdc</span>
+          </ion-col>
+          <ion-col     col-4>
+              <ion-buttons right>
+                  <button  class="transparant text-black" ion-button icon-only  (click)="xx()" >
+                      <ion-icon   [name]="red"></ion-icon>
+                  </button>
+            
+                  <button  class="transparant text-black" ion-button icon-only  (click)="wpService.doShare(post)">
+                      <ion-icon name="md-share"></ion-icon>
+                  </button>
+            
+                  <button class="transparant text-black" ion-button icon-only  (click)='openPostUrl()'>
+                      <ion-icon class="" name="md-open"></ion-icon>
+                  </button>
+            
+                </ion-buttons>
+          </ion-col>
+          </ion-row>
+        </div>
+          </ion-card>
+  </div> -->
+
+<!-- Header Afrer Juanpi -->
 </ion-content>
